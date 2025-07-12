@@ -9,8 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- html2pdf.js library for PDF generation - RESTORED -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- No longer need html2pdf.js for direct link, but keep this comment for clarity -->
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -47,7 +46,7 @@
         .skill-icon {
             color: #60a5fa; /* Un azul más claro para los iconos */
         }
-        /* Styles for PDF content (hidden on web) */
+        /* Styles for PDF content (hidden on web) - Still included for reference if you ever need to regenerate locally */
         #cv-pdf-content {
             display: none; /* Hidden by default */
             font-family: 'Times New Roman', serif; /* More formal font for PDF */
@@ -107,10 +106,10 @@
         <div class="p-4 bg-gray-50 flex justify-end space-x-2 items-center">
             <button id="btn-es" class="lang-btn active text-sm font-semibold py-1 px-3 rounded-full">Español</button>
             <button id="btn-en" class="lang-btn text-sm font-semibold py-1 px-3 rounded-full">English</button>
-            <!-- PDF download button - now a button for generation -->
-            <button id="btn-download-pdf" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-semibold py-1 px-3 rounded-full transition-colors duration-300">
+            <!-- Modified PDF download button to be a direct link -->
+            <a id="btn-download-pdf" href="https://mk1871.github.io/angel-cv/pdfs/Curriculum_Angel_Castaneda_ES.pdf" target="_blank" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-semibold py-1 px-3 rounded-full transition-colors duration-300">
                 <i class="fas fa-file-pdf mr-1"></i> <span id="pdf-button-text">Descargar PDF</span>
-            </button>
+            </a>
         </div>
 
         <!-- Currículum en Español -->
@@ -279,7 +278,7 @@
                             <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
                                 <li>Developed REST APIs and backend solutions with Node.js and Python to automate client business processes.</li>
                                 <li>Implemented web automation with Selenium and Playwright for data collection and optimization of repetitive tasks.</li>
-                                <li>Analyzed support data using Python, Pandas, and Jupyter Notebooks to identify trends, reducing recurring issues by 30%.</li>
+                                <li>Analicé datos de soporte con Python, Pandas y Jupyter Notebooks para identificar tendencias, reduciendo problemas recurrentes en un 30%.</li>
                                 <li>Implemented an AI chatbot to filter inquiries, reducing manual ticket volume by 25%.</li>
                                 <li>Managed and optimized SQL databases to ensure data integrity and performance.</li>
                             </ul>
@@ -296,7 +295,7 @@
                 </section>
 
                 <section>
-                    <h2 class="text-2xl font-bold">EDUCACIÓN</h2>
+                    <h2 class="text-2xl font-bold">EDUCATION</h2>
                     <div>
                         <h3 class="text-lg font-semibold">Technologist in Software Analysis and Development</h3>
                         <p class="text-md font-medium text-gray-600">SENA, Centro Tecnológico del Mobiliario – Itagüí (2024)</p>
@@ -385,9 +384,10 @@
         const cvEn = document.getElementById('cv-en');
         const btnDownloadPdf = document.getElementById('btn-download-pdf');
         const pdfButtonText = document.getElementById('pdf-button-text');
-        const cvPdfContent = document.getElementById('cv-pdf-content'); // This is the content to be converted to PDF
+        // We no longer need cvPdfContent for generation, as we're linking directly.
+        // However, the div itself is still in the HTML for potential local generation if needed.
 
-        // Function to switch language display and update PDF button text
+        // Function to switch language display and update PDF button text and href
         function switchLanguage(lang) {
             if (lang === 'es') {
                 cvEs.style.display = 'flex';
@@ -395,29 +395,20 @@
                 btnEs.classList.add('active');
                 btnEn.classList.remove('active');
                 pdfButtonText.textContent = 'Descargar PDF'; // Change button text to Spanish
+                btnDownloadPdf.href = 'https://mk1871.github.io/angel-cv/pdfs/Curriculum_Angel_Castaneda_ES.pdf'; // Link to Spanish PDF
             } else {
                 cvEs.style.display = 'none';
                 cvEn.style.display = 'flex';
                 btnEn.classList.add('active');
                 btnEs.classList.remove('active');
                 pdfButtonText.textContent = 'Download PDF'; // Change button text to English
+                btnDownloadPdf.href = 'https://mk1871.github.io/angel-cv/pdfs/Curriculum_Angel_Castaneda_EN.pdf'; // Link to English PDF
             }
         }
 
-        // Event listener for PDF download button - now generates PDF
-        btnDownloadPdf.addEventListener('click', () => {
-            // Options for html2pdf
-            const options = {
-                margin: [10, 10, 10, 10], // Margins: top, left, bottom, right
-                filename: 'Curriculum_Angel_Castaneda.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
-
-            // Generate PDF from the hidden content
-            html2pdf().set(options).from(cvPdfContent).save();
-        });
+        // Event listeners for language buttons
+        btnEs.addEventListener('click', () => switchLanguage('es'));
+        btnEn.addEventListener('click', () => switchLanguage('en'));
 
         // Initialize language display on load
         switchLanguage('es');
