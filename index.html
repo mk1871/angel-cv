@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- html2pdf.js library for PDF generation -->
+    <!-- html2pdf.js library for PDF generation - RESTORED -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         body {
@@ -107,6 +107,7 @@
         <div class="p-4 bg-gray-50 flex justify-end space-x-2 items-center">
             <button id="btn-es" class="lang-btn active text-sm font-semibold py-1 px-3 rounded-full">Español</button>
             <button id="btn-en" class="lang-btn text-sm font-semibold py-1 px-3 rounded-full">English</button>
+            <!-- PDF download button - now a button for generation -->
             <button id="btn-download-pdf" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-semibold py-1 px-3 rounded-full transition-colors duration-300">
                 <i class="fas fa-file-pdf mr-1"></i> <span id="pdf-button-text">Descargar PDF</span>
             </button>
@@ -173,7 +174,7 @@
                             <p class="job-title text-md font-medium">SCALA COLOMBIA SAS | Sep 2024 – Mar 2025 (Proyectado)</p>
                             <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
                                 <li>Gestioné tickets de soporte técnico y colaboré con el equipo de desarrollo para la resolución de bugs.</li>
-                                <li>Alcancé un 95% de calificación de satisfacción del cliente a través de asistencia técnica de primer nivel.</li>
+                                <li>Alcanzó un 95% de calificación de satisfacción del cliente a través de asistencia técnica de primer nivel.</li>
                             </ul>
                         </div>
                         <div>
@@ -295,7 +296,7 @@
                 </section>
 
                 <section>
-                    <h2 class="text-2xl font-bold">EDUCATION</h2>
+                    <h2 class="text-2xl font-bold">EDUCACIÓN</h2>
                     <div>
                         <h3 class="text-lg font-semibold">Technologist in Software Analysis and Development</h3>
                         <p class="text-md font-medium text-gray-600">SENA, Centro Tecnológico del Mobiliario – Itagüí (2024)</p>
@@ -383,8 +384,8 @@
         const cvEs = document.getElementById('cv-es');
         const cvEn = document.getElementById('cv-en');
         const btnDownloadPdf = document.getElementById('btn-download-pdf');
-        const pdfButtonText = document.getElementById('pdf-button-text'); // Nuevo span para el texto del botón
-        const cvPdfContent = document.getElementById('cv-pdf-content');
+        const pdfButtonText = document.getElementById('pdf-button-text');
+        const cvPdfContent = document.getElementById('cv-pdf-content'); // This is the content to be converted to PDF
 
         // Function to switch language display and update PDF button text
         function switchLanguage(lang) {
@@ -393,21 +394,17 @@
                 cvEn.style.display = 'none';
                 btnEs.classList.add('active');
                 btnEn.classList.remove('active');
-                pdfButtonText.textContent = 'Descargar PDF'; // Cambia el texto a español
+                pdfButtonText.textContent = 'Descargar PDF'; // Change button text to Spanish
             } else {
                 cvEs.style.display = 'none';
                 cvEn.style.display = 'flex';
                 btnEn.classList.add('active');
                 btnEs.classList.remove('active');
-                pdfButtonText.textContent = 'Download PDF'; // Cambia el texto a inglés
+                pdfButtonText.textContent = 'Download PDF'; // Change button text to English
             }
         }
 
-        // Event listeners for language buttons
-        btnEs.addEventListener('click', () => switchLanguage('es'));
-        btnEn.addEventListener('click', () => switchLanguage('en'));
-
-        // Event listener for PDF download button
+        // Event listener for PDF download button - now generates PDF
         btnDownloadPdf.addEventListener('click', () => {
             // Options for html2pdf
             const options = {
