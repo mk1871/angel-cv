@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Angel Manuel Castañeda Uribe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- html2pdf.js library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .main-container {
+            max-width: 1000px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .sidebar {
+            background-color: #1f2937; /* Un gris más oscuro y moderno */
+        }
+        .content h2 {
+            border-bottom: 2px solid #3b82f6; /* Un azul más vibrante */
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+            color: #1f2937;
+        }
+        .job-title {
+            color: #3b82f6;
+        }
+        .lang-btn {
+            transition: all 0.3s ease;
+        }
+        .lang-btn.active {
+            background-color: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+        .lang-btn:not(.active) {
+            background-color: white;
+            color: #3b82f6;
+            border: 1px solid #3b82f6;
+        }
+        .skill-icon {
+            color: #60a5fa; /* Un azul más claro para los iconos */
+        }
+        /* Styles for PDF content (hidden on web) */
+        #cv-pdf-content {
+            display: none; /* Hidden by default */
+            font-family: 'Times New Roman', serif; /* More formal font for PDF */
+            color: #333;
+            padding: 20mm; /* A4 margins */
+            box-sizing: border-box;
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height */
+            margin: 0 auto;
+        }
+        #cv-pdf-content h1 {
+            font-size: 24pt;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 5pt;
+        }
+        #cv-pdf-content h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            margin-top: 15pt;
+            margin-bottom: 5pt;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 2pt;
+        }
+        #cv-pdf-content h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin-top: 10pt;
+            margin-bottom: 3pt;
+        }
+        #cv-pdf-content p, #cv-pdf-content li {
+            font-size: 10pt;
+            line-height: 1.4;
+            margin-bottom: 2pt;
+        }
+        #cv-pdf-content ul {
+            list-style-type: disc;
+            margin-left: 15pt;
+        }
+        #cv-pdf-content .contact-info {
+            text-align: center;
+            margin-bottom: 10pt;
+            font-size: 10pt;
+        }
+        #cv-pdf-content .job-details {
+            margin-bottom: 10pt;
+        }
+        #cv-pdf-content .job-period {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body class="bg-gray-200 p-4 sm:p-8 flex justify-center items-start min-h-screen">
+
+    <div class="main-container bg-white rounded-lg overflow-hidden w-full mx-auto">
+        <!-- Contenedor de Idiomas y Descarga PDF -->
+        <div class="p-4 bg-gray-50 flex justify-end space-x-2 items-center">
+            <button id="btn-es" class="lang-btn active text-sm font-semibold py-1 px-3 rounded-full">Español</button>
+            <button id="btn-en" class="lang-btn text-sm font-semibold py-1 px-3 rounded-full">English</button>
+            <button id="btn-download-pdf" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-semibold py-1 px-3 rounded-full transition-colors duration-300">
+                <i class="fas fa-file-pdf mr-1"></i> <span id="pdf-button-text">Descargar PDF</span>
+            </button>
+        </div>
+
+        <!-- Currículum en Español -->
+        <div id="cv-es" class="flex flex-col md:flex-row">
+            <!-- Sidebar (Columna Izquierda) -->
+            <aside class="sidebar text-white w-full md:w-1/3 p-6">
+                <div class="text-center mb-8">
+                    <!-- Se elimina la imagen de perfil -->
+                    <h1 class="text-2xl font-bold">ANGEL M. CASTAÑEDA</h1>
+                    <h2 class="text-md font-light text-blue-300">Desarrollador de Software y Especialista en Soluciones al Cliente</h2>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold border-b-2 border-blue-400 pb-2 mb-4">CONTACTO</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><i class="fas fa-phone fa-fw mr-3 skill-icon"></i> (+57) 315-604-6142</li>
+                        <li><i class="fas fa-envelope fa-fw mr-3 skill-icon"></i> manuelkas2022@gmail.com</li>
+                        <li><i class="fab fa-github fa-fw mr-3 skill-icon"></i> <a href="https://github.com/mk1871" target="_blank" class="hover:text-blue-300">Perfil de GitHub</a></li>
+                        <li><i class="fas fa-map-marker-alt fa-fw mr-3 skill-icon"></i> Bucaramanga, Colombia</li>
+                    </ul>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold border-b-2 border-blue-400 pb-2 mb-4">HABILIDADES TÉCNICAS</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fas fa-code fa-fw mr-2 skill-icon"></i> Lenguajes: JavaScript, Python, Java, C++, TypeScript, Dart, Bash</li>
+                        <li><i class="fas fa-laptop-code fa-fw mr-2 skill-icon"></i> Desarrollo Web: HTML, CSS, React, Node.js, Bootstrap</li>
+                        <li><i class="fas fa-robot fa-fw mr-2 skill-icon"></i> Automatización: Selenium, Playwright, Bots con Python</li>
+                        <li><i class="fas fa-chart-bar fa-fw mr-2 skill-icon"></i> Análisis de Datos: Python (Pandas), Jupyter Notebooks</li>
+                        <li><i class="fas fa-database fa-fw mr-2 skill-icon"></i> Bases de Datos: SQL, NoSQL</li>
+                        <li><i class="fas fa-cloud fa-fw mr-2 skill-icon"></i> APIs: Creación y Consumo de APIs REST</li>
+                        <li><i class="fas fa-terminal fa-fw mr-2 skill-icon"></i> Sistemas: Linux, Git</li>
+                        <li><i class="fas fa-headset fa-fw mr-2 skill-icon"></i> Gestión de CRM y Soporte</li>
+                        <li><i class="fas fa-comments fa-fw mr-2 skill-icon"></i> IA: Implementación de Chatbots</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold border-b-2 border-blue-400 pb-2 mb-4">IDIOMAS</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><strong>Español:</strong> Nativo</li>
+                        <li><strong>Inglés:</strong> Intermedio (B1)</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Contenido Principal (Columna Derecha) -->
+            <main class="content w-full md:w-2/3 p-8">
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold">RESUMEN PROFESIONAL</h2>
+                    <p class="text-sm leading-relaxed text-gray-700">
+                        Desarrollador de software y especialista en soporte con más de 8 años de experiencia conectando la excelencia técnica con la satisfacción del cliente. Experto en el desarrollo de soluciones backend, gestión de bases de datos SQL y análisis de datos con Python (incluyendo Pandas y Jupyter Notebooks) para optimizar procesos. Hábil en la automatización de procesos web con herramientas como Selenium y Playwright. Apasionado por usar la tecnología, incluyendo herramientas de IA, para resolver problemas complejos y mejorar la experiencia del usuario final.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold">EXPERIENCIA PROFESIONAL</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-lg font-semibold">Aprendiz de Desarrollo y Soporte</h3>
+                            <p class="job-title text-md font-medium">SCALA COLOMBIA SAS | Sep 2024 – Mar 2025 (Proyectado)</p>
+                            <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
+                                <li>Gestioné tickets de soporte técnico y colaboré con el equipo de desarrollo para la resolución de bugs.</li>
+                                <li>Alcancé un 95% de calificación de satisfacción del cliente a través de asistencia técnica de primer nivel.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold">Desarrollador y Consultor TI</h3>
+                            <p class="job-title text-md font-medium">Freelance | 2020 – 2024</p>
+                            <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
+                                <li>Desarrollé APIs REST y soluciones backend con Node.js y Python para automatizar procesos de negocio de clientes.</li>
+                                <li>Implementé automatización web con Selenium y Playwright para la recolección de datos y optimización de tareas repetitivas.</li>
+                                <li>Analicé datos de soporte con Python, Pandas y Jupyter Notebooks para identificar tendencias, reduciendo problemas recurrentes en un 30%.</li>
+                                <li>Implementé un chatbot con IA para filtrar consultas, reduciendo el volumen de tickets manuales en un 25%.</li>
+                                <li>Administré y optimicé bases de datos SQL para garantizar la integridad y el rendimiento de los datos.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold">Técnico Principal de Soporte y Web</h3>
+                            <p class="job-title text-md font-medium">C & S Computadores | 2016 – 2020</p>
+                            <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
+                                <li>Atendí un alto volumen de solicitudes de clientes (+25/día) relacionadas con diagnóstico y reparación.</li>
+                                <li>Lideré el rediseño del sitio web de la empresa, lo que resultó en un aumento del 30% en las consultas online.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold">EDUCACIÓN</h2>
+                    <div>
+                        <h3 class="text-lg font-semibold">Tecnólogo en Análisis y Desarrollo de Software</h3>
+                        <p class="text-md font-medium text-gray-600">SENA, Centro Tecnológico del Mobiliario – Itagüí (2024)</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Currículum en Inglés -->
+        <div id="cv-en" class="hidden flex-col md:flex-row">
+             <!-- Sidebar (Left Column) -->
+            <aside class="sidebar text-white w-full md:w-1/3 p-6">
+                <div class="text-center mb-8">
+                    <!-- Profile picture removed -->
+                    <h1 class="text-2xl font-bold">ANGEL M. CASTAÑEDA</h1>
+                    <h2 class="text-md font-light text-blue-300">Software Developer & Customer Solutions Specialist</h2>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold border-b-2 border-blue-400 pb-2 mb-4">CONTACT</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><i class="fas fa-phone fa-fw mr-3 skill-icon"></i> (+57) 315-604-6142</li>
+                        <li><i class="fas fa-envelope fa-fw mr-3 skill-icon"></i> manuelkas2022@gmail.com</li>
+                        <li><i class="fab fa-github fa-fw mr-3 skill-icon"></i> <a href="https://github.com/mk1871" target="_blank" class="hover:text-blue-300">GitHub Profile</a></li>
+                        <li><i class="fas fa-map-marker-alt fa-fw mr-3 skill-icon"></i> Bucaramanga, Colombia</li>
+                    </ul>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold border-b-2 border-blue-400 pb-2 mb-4">TECHNICAL SKILLS</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fas fa-code fa-fw mr-2 skill-icon"></i> Languages: JavaScript, Python, Java, C++, TypeScript, Dart, Bash</li>
+                        <li><i class="fas fa-laptop-code fa-fw mr-2 skill-icon"></i> Web Development: HTML, CSS, React, Node.js, Bootstrap</li>
+                        <li><i class="fas fa-robot fa-fw mr-2 skill-icon"></i> Automation: Selenium, Playwright, Python Bots</li>
+                        <li><i class="fas fa-chart-bar fa-fw mr-2 skill-icon"></i> Data Analysis: Python (Pandas), Jupyter Notebooks</li>
+                        <li><i class="fas fa-database fa-fw mr-2 skill-icon"></i> Database Management: SQL, NoSQL</li>
+                        <li><i class="fas fa-cloud fa-fw mr-2 skill-icon"></i> APIs: REST API Development & Consumption</li>
+                        <li><i class="fas fa-terminal fa-fw mr-2 skill-icon"></i> Systems: Linux, Git</li>
+                        <li><i class="fas fa-headset fa-fw mr-2 skill-icon"></i> CRM & Support Management</li>
+                        <li><i class="fas fa-comments fa-fw mr-2 skill-icon"></i> AI: Chatbot Implementation</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold border-b-2 border-blue-400 pb-2 mb-4">LANGUAGES</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><strong>Spanish:</strong> Native</li>
+                        <li><strong>English:</strong> Intermediate (B1)</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Main Content (Right Column) -->
+            <main class="content w-full md:w-2/3 p-8">
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold">PROFESSIONAL SUMMARY</h2>
+                    <p class="text-sm leading-relaxed text-gray-700">
+                        Software developer and support specialist with over 8 years of experience connecting technical excellence with customer satisfaction. Expert in backend solutions development, SQL database management, and data analysis with Python (including Pandas and Jupyter Notebooks) to optimize processes. Proficient in web automation with tools like Selenium and Playwright. Passionate about using technology, including AI tools, to solve complex problems and enhance the end-user experience.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold">PROFESSIONAL EXPERIENCE</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-lg font-semibold">Development & Support Apprentice</h3>
+                            <p class="job-title text-md font-medium">SCALA COLOMBIA SAS | Sep 2024 – Mar 2025 (Projected)</p>
+                            <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
+                                <li>Managed technical support tickets and collaborated with the development team on bug resolution.</li>
+                                <li>Achieved a 95% customer satisfaction rating through top-tier technical assistance.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold">Developer & IT Consultant</h3>
+                            <p class="job-title text-md font-medium">Freelance | 2020 – 2024</p>
+                            <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
+                                <li>Developed REST APIs and backend solutions with Node.js and Python to automate client business processes.</li>
+                                <li>Implemented web automation with Selenium and Playwright for data collection and optimization of repetitive tasks.</li>
+                                <li>Analyzed support data using Python, Pandas, and Jupyter Notebooks to identify trends, reducing recurring issues by 30%.</li>
+                                <li>Implemented an AI chatbot to filter inquiries, reducing manual ticket volume by 25%.</li>
+                                <li>Managed and optimized SQL databases to ensure data integrity and performance.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold">Lead Support & Web Technician</h3>
+                            <p class="job-title text-md font-medium">C & S Computadores | 2016 – 2020</p>
+                            <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
+                                <li>Handled a high volume of customer requests (+25/day) for diagnostics and repairs.</li>
+                                <li>Led the redesign of the company website, resulting in a 30% increase in online inquiries.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold">EDUCATION</h2>
+                    <div>
+                        <h3 class="text-lg font-semibold">Technologist in Software Analysis and Development</h3>
+                        <p class="text-md font-medium text-gray-600">SENA, Centro Tecnológico del Mobiliario – Itagüí (2024)</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Hidden content for PDF generation -->
+        <div id="cv-pdf-content" class="p-8">
+            <h1>ANGEL MANUEL CASTAÑEDA URIBE</h1>
+            <p style="text-align: center; font-size: 11pt; margin-bottom: 15pt;">Desarrollador de Software y Especialista en Soluciones al Cliente</p>
+
+            <div class="contact-info">
+                <span>(+57) 315-604-6142</span> | 
+                <span>manuelkas2022@gmail.com</span> | 
+                <span>Perfil de GitHub: https://github.com/mk1871</span> | 
+                <span>Bucaramanga, Colombia</span>
+            </div>
+
+            <h2>RESUMEN PROFESIONAL</h2>
+            <p>
+                Desarrollador de software y especialista en soporte con más de 8 años de experiencia conectando la excelencia técnica con la satisfacción del cliente. Experto en el desarrollo de soluciones backend, gestión de bases de datos SQL y análisis de datos con Python (incluyendo Pandas y Jupyter Notebooks) para optimizar procesos. Hábil en la automatización de procesos web con herramientas como Selenium y Playwright. Apasionado por usar la tecnología, incluyendo herramientas de IA, para resolver problemas complejos y mejorar la experiencia del usuario final.
+            </p>
+
+            <h2>HABILIDADES TÉCNICAS</h2>
+            <ul>
+                <li>Lenguajes: JavaScript, Python, Java, C++, TypeScript, Dart, Bash</li>
+                <li>Desarrollo Web: HTML, CSS, React, Node.js, Bootstrap</li>
+                <li>Automatización: Selenium, Playwright, Bots con Python</li>
+                <li>Análisis de Datos: Python (Pandas), Jupyter Notebooks</li>
+                <li>Bases de Datos: SQL, NoSQL</li>
+                <li>APIs: Creación y Consumo de APIs REST</li>
+                <li>Sistemas: Linux, Git</li>
+                <li>Gestión de CRM y Soporte</li>
+                <li>IA: Implementación de Chatbots</li>
+            </ul>
+
+            <h2>EXPERIENCIA PROFESIONAL</h2>
+            <div class="job-details">
+                <h3>Aprendiz de Desarrollo y Soporte</h3>
+                <p class="job-period">SCALA COLOMBIA SAS | Sep 2024 – Mar 2025 (Proyectado)</p>
+                <ul>
+                    <li>Gestioné tickets de soporte técnico y colaboré con el equipo de desarrollo para la resolución de bugs.</li>
+                    <li>Alcancé un 95% de calificación de satisfacción del cliente a través de asistencia técnica de primer nivel.</li>
+                </ul>
+            </div>
+            <div class="job-details">
+                <h3>Desarrollador y Consultor TI</h3>
+                <p class="job-period">Freelance | 2020 – 2024</p>
+                <ul>
+                    <li>Desarrollé APIs REST y soluciones backend con Node.js y Python para automatizar procesos de negocio de clientes.</li>
+                    <li>Implementé automatización web con Selenium y Playwright para la recolección de datos y optimización de tareas repetitivas.</li>
+                    <li>Analicé datos de soporte con Python, Pandas y Jupyter Notebooks para identificar tendencias, reduciendo problemas recurrentes en un 30%.</li>
+                    <li>Implementé un chatbot con IA para filtrar consultas, reduciendo el volumen de tickets manuales en un 25%.</li>
+                    <li>Administré y optimicé bases de datos SQL para garantizar la integridad y el rendimiento de los datos.</li>
+                </ul>
+            </div>
+            <div class="job-details">
+                <h3>Técnico Principal de Soporte y Web</h3>
+                <p class="job-period">C & S Computadores | 2016 – 2020</p>
+                <ul>
+                    <li>Atendí un alto volumen de solicitudes de clientes (+25/día) relacionadas con diagnóstico y reparación.</li>
+                    <li>Lideré el rediseño del sitio web de la empresa, lo que resultó en un aumento del 30% en las consultas online.</li>
+                </ul>
+            </div>
+
+            <h2>EDUCACIÓN</h2>
+            <div>
+                <h3>Tecnólogo en Análisis y Desarrollo de Software</h3>
+                <p>SENA, Centro Tecnológico del Mobiliario – Itagüí (2024)</p>
+            </div>
+
+            <h2>IDIOMAS</h2>
+            <ul>
+                <li>Español: Nativo</li>
+                <li>Inglés: Intermedio (B1)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const btnEs = document.getElementById('btn-es');
+        const btnEn = document.getElementById('btn-en');
+        const cvEs = document.getElementById('cv-es');
+        const cvEn = document.getElementById('cv-en');
+        const btnDownloadPdf = document.getElementById('btn-download-pdf');
+        const pdfButtonText = document.getElementById('pdf-button-text'); // Nuevo span para el texto del botón
+        const cvPdfContent = document.getElementById('cv-pdf-content');
+
+        // Function to switch language display and update PDF button text
+        function switchLanguage(lang) {
+            if (lang === 'es') {
+                cvEs.style.display = 'flex';
+                cvEn.style.display = 'none';
+                btnEs.classList.add('active');
+                btnEn.classList.remove('active');
+                pdfButtonText.textContent = 'Descargar PDF'; // Cambia el texto a español
+            } else {
+                cvEs.style.display = 'none';
+                cvEn.style.display = 'flex';
+                btnEn.classList.add('active');
+                btnEs.classList.remove('active');
+                pdfButtonText.textContent = 'Download PDF'; // Cambia el texto a inglés
+            }
+        }
+
+        // Event listeners for language buttons
+        btnEs.addEventListener('click', () => switchLanguage('es'));
+        btnEn.addEventListener('click', () => switchLanguage('en'));
+
+        // Event listener for PDF download button
+        btnDownloadPdf.addEventListener('click', () => {
+            // Options for html2pdf
+            const options = {
+                margin: [10, 10, 10, 10], // Margins: top, left, bottom, right
+                filename: 'Curriculum_Angel_Castaneda.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            // Generate PDF from the hidden content
+            html2pdf().set(options).from(cvPdfContent).save();
+        });
+
+        // Initialize language display on load
+        switchLanguage('es');
+    </script>
+
+</body>
+</html>
