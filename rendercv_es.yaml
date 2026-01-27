@@ -1,0 +1,223 @@
+cv:
+  name: ANGEL MANUEL CASTAÑEDA URIBE
+  location: Bucaramanga, Colombia
+  email: manuelkas2022@gmail.com
+  phone: (+57) 315-604-6142
+  social_networks:
+    - network: GitHub
+      username: mk1871
+  sections:
+    resumen_profesional:
+      - Tecnólogo en Desarrollo de Software con sólida experiencia en backend, gestión de servidores Linux (AlmaLinux/Arch) y automatización con Python.
+      - Especializado en la implementación de soluciones seguras y eficientes. He configurado firewalls perimetrales (Endian) y realizado auditorías de seguridad en entornos controlados (Kali/Parrot).
+      - Busco aplicar mis habilidades técnicas y pasión por la ciberseguridad para proteger y optimizar infraestructuras críticas.
+    habilidades_técnicas:
+      - label: Sistemas
+        details: Linux (AlmaLinux, Arch, Kali, Parrot)
+      - label: Seguridad
+        details: Endian Firewall, Nmap, Wireshark, Auditoría Wireless (Lab)
+      - label: Lenguajes
+        details: Python, Bash, PHP, JavaScript, SQL
+      - label: Backend
+        details: Laravel, Node.js, APIs REST
+      - label: Datos
+        details: PostgreSQL, MySQL, Supabase
+      - label: Automatización & Scripting
+        details: Selenium, Playwright, Python, Bash
+      - label: Full Stack
+        details: Vue.js, TailwindCSS, Git (Trabajo en Equipo)
+      - label: Cloud
+        details: AWS S3 (Integración nivel código)
+    experiencia_profesional:
+      - company: SCALA COLOMBIA SAS
+        position: Desarrollador Backend & Automatización (Contrato de Aprendizaje)
+        start_date: 2024-09
+        end_date: 2025-05
+        location: Remoto
+        highlights:
+          - Desarrollo de backend con Laravel para consumo de APIs externas (Twilio, Retell, Synthflow).
+          - Implementación de procesos ETL (Extracción, Transformación y Carga) para generar reportes diarios de CVs y logs.
+          - Automatización de escritura y almacenamiento seguro de logs y archivos en AWS S3.
+          - Optimización de bases de datos y colaboración directa con el equipo de análisis de datos.
+      - company: Freelance
+        position: Desarrollador Web Full Stack & Soporte Remoto
+        start_date: 2020-01
+        end_date: present
+        location: Remoto
+        highlights:
+          - Desarrollo de aplicaciones web seguras (Full Stack) utilizando Supabase, Vue.js y TailwindCSS.
+          - Implementación y configuración de firewalls perimetrales (Endian) y servidores Linux (AlmaLinux) para clientes.
+          - Auditoría de seguridad en redes inalámbricas y pruebas de penetración en entornos controlados (Lab) usando Nmap/Kali.
+          - Creación de scripts de automatización en Python y Bash para administración de sistemas.
+          - Soporte técnico remoto avanzado y mantenimiento de infraestructura con herramientas como RustDesk.
+      - company: C & S Computadores
+        position: Técnico Principal de Soporte y Redes
+        start_date: 2016-01
+        end_date: 2020-12
+        location: Bucaramanga, Colombia
+        highlights:
+          - Diagnóstico y resolución de fallos de hardware y software en equipos de cómputo.
+          - Configuración básica de redes LAN y resolución de problemas de conectividad.
+          - Lideré la actualización tecnológica de la infraestructura interna.
+    educación:
+      - institution: SENA, Centro Tecnológico del Mobiliario
+        area: Análisis y Desarrollo de Software
+        degree: Tecnólogo
+        date: Jul 2025
+        location: Itagüí, Colombia
+    certificaciones:
+      - institution: Coursera
+        area: Google Cybersecurity Certificate
+        degree: Certificación
+        date: En curso
+        location: Online
+    idiomas:
+      - label: Español
+        details: Nativo
+      - label: Inglés
+        details: Intermedio (B1)
+
+design:
+  theme: engineeringresumes
+  page:
+    size: us-letter
+    top_margin: 2cm
+    bottom_margin: 2cm
+    left_margin: 2cm
+    right_margin: 2cm
+    show_page_numbering: false
+    show_last_updated_date: true
+  colors:
+    text: rgb(0, 0, 0)
+    name: rgb(0, 0, 0)
+    connections: rgb(0, 0, 0)
+    section_titles: rgb(0, 0, 0)
+    links: rgb(0, 0, 0)
+    last_updated_date_and_page_numbering: rgb(128, 128, 128)
+  text:
+    font_family: XCharter
+    font_size: 10pt
+    leading: 0.6em
+    alignment: justified
+    date_and_location_column_alignment: right
+  links:
+    underline: true
+    use_external_link_icon: false
+  header:
+    name_font_family: XCharter
+    name_font_size: 25pt
+    name_bold: false
+    small_caps_for_name: false
+    photo_width: 3.5cm
+    vertical_space_between_name_and_connections: 0.7cm
+    vertical_space_between_connections_and_first_section: 0.7cm
+    horizontal_space_between_connections: 0.5cm
+    connections_font_family: XCharter
+    separator_between_connections: '|'
+    use_icons_for_connections: false
+    use_urls_as_placeholders_for_connections: true
+    make_connections_links: true
+    alignment: center
+  section_titles:
+    type: with-full-line
+    font_family: XCharter
+    font_size: 1.2em
+    bold: true
+    small_caps: false
+    line_thickness: 0.5pt
+    vertical_space_above: 0.55cm
+    vertical_space_below: 0.3cm
+  entries:
+    date_and_location_width: 4.15cm
+    left_and_right_margin: 0cm
+    horizontal_space_between_columns: 0.1cm
+    vertical_space_between_entries: 0.4cm
+    allow_page_break_in_sections: true
+    allow_page_break_in_entries: true
+    short_second_row: false
+    show_time_spans_in: []
+  highlights:
+    bullet: •
+    nested_bullet: '-'
+    top_margin: 0.25cm
+    left_margin: 0cm
+    vertical_space_between_highlights: 0.19cm
+    horizontal_space_between_bullet_and_highlight: 0.3em
+    summary_left_margin: 0cm
+  entry_types:
+    one_line_entry:
+      template: '**LABEL:** DETAILS'
+    education_entry:
+      main_column_first_row_template: '**INSTITUTION**, DEGREE in AREA -- LOCATION'
+      degree_column_template:
+      degree_column_width: 1cm
+      main_column_second_row_template: |-
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column_template: DATE
+    normal_entry:
+      main_column_first_row_template: '**NAME** -- **LOCATION**'
+      main_column_second_row_template: |-
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column_template: DATE
+    experience_entry:
+      main_column_first_row_template: '**POSITION**, COMPANY -- LOCATION'
+      main_column_second_row_template: |-
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column_template: DATE
+    publication_entry:
+      main_column_first_row_template: '**TITLE**'
+      main_column_second_row_template: |-
+        AUTHORS
+        URL (JOURNAL)
+      main_column_second_row_without_journal_template: |-
+        AUTHORS
+        URL
+      main_column_second_row_without_url_template: |-
+        AUTHORS
+        JOURNAL
+      date_and_location_column_template: DATE
+locale:
+  language: es
+  phone_number_format: national
+  page_numbering_template: NOMBRE - Página NÚMERO_DE_PÁGINA de TOTAL_DE_PÁGINAS
+  last_updated_date_template: Última actualización HOY
+  date_template: MES_ABREVIADO AÑO
+  month: mes
+  months: meses
+  year: año
+  years: años
+  present: actualidad
+  to: –
+  abbreviations_for_months:
+    - Ene
+    - Feb
+    - Mar
+    - Abr
+    - May
+    - Jun
+    - Jul
+    - Ago
+    - Sep
+    - Oct
+    - Nov
+    - Dic
+  full_names_of_months:
+    - Enero
+    - Febrero
+    - Marzo
+    - Abril
+    - Mayo
+    - Junio
+    - Julio
+    - Agosto
+    - Septiembre
+    - Octubre
+    - Noviembre
+    - Diciembre
+rendercv_settings:
+  date: '2025-10-28'
+  bold_keywords: []
+  sort_entries: none
