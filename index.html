@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Angel Manuel Castañeda Uribe</title>
+    <title>CV - Angel Castañeda | Backend & Cybersecurity</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,101 +14,78 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            background-color: #0f172a;
+            /* Slate 900 */
+            color: #e2e8f0;
+            /* Slate 200 */
         }
+
         .main-container {
             max-width: 1000px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            background-color: #1e293b;
+            /* Slate 800 */
         }
+
         .sidebar {
-            background-color: #1f2937; /* Un gris más oscuro y moderno */
+            background-color: #0f172a;
+            /* Slate 900 */
+            border-right: 1px solid #334155;
         }
+
         .content h2 {
-            border-bottom: 2px solid #3b82f6; /* Un azul más vibrante */
+            border-bottom: 2px solid #10b981;
+            /* Emerald 500 */
             padding-bottom: 8px;
             margin-bottom: 16px;
-            color: #1f2937;
+            color: #f8fafc;
+            /* Slate 50 */
         }
+
         .job-title {
-            color: #3b82f6;
+            color: #34d399;
+            /* Emerald 400 */
         }
+
         .lang-btn {
             transition: all 0.3s ease;
         }
+
         .lang-btn.active {
-            background-color: #3b82f6;
-            color: white;
-            border-color: #3b82f6;
+            background-color: #10b981;
+            color: #0f172a;
+            border-color: #10b981;
         }
+
         .lang-btn:not(.active) {
-            background-color: white;
-            color: #3b82f6;
-            border: 1px solid #3b82f6;
+            background-color: transparent;
+            color: #10b981;
+            border: 1px solid #10b981;
         }
+
         .skill-icon {
-            color: #60a5fa; /* Un azul más claro para los iconos */
+            color: #34d399;
+            /* Emerald 400 */
         }
-        /* Styles for PDF content (hidden on web) - Still included for reference if you ever need to regenerate locally */
+
+        /* Styles for PDF content (hidden on web) */
         #cv-pdf-content {
-            display: none; /* Hidden by default */
-            font-family: 'Times New Roman', serif; /* More formal font for PDF */
-            color: #333;
-            padding: 20mm; /* A4 margins */
-            box-sizing: border-box;
-            width: 210mm; /* A4 width */
-            min-height: 297mm; /* A4 height */
-            margin: 0 auto;
-        }
-        #cv-pdf-content h1 {
-            font-size: 24pt;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 5pt;
-        }
-        #cv-pdf-content h2 {
-            font-size: 14pt;
-            font-weight: bold;
-            margin-top: 15pt;
-            margin-bottom: 5pt;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 2pt;
-        }
-        #cv-pdf-content h3 {
-            font-size: 12pt;
-            font-weight: bold;
-            margin-top: 10pt;
-            margin-bottom: 3pt;
-        }
-        #cv-pdf-content p, #cv-pdf-content li {
-            font-size: 10pt;
-            line-height: 1.4;
-            margin-bottom: 2pt;
-        }
-        #cv-pdf-content ul {
-            list-style-type: disc;
-            margin-left: 15pt;
-        }
-        #cv-pdf-content .contact-info {
-            text-align: center;
-            margin-bottom: 10pt;
-            font-size: 10pt;
-        }
-        #cv-pdf-content .job-details {
-            margin-bottom: 10pt;
-        }
-        #cv-pdf-content .job-period {
-            font-style: italic;
+            display: none;
         }
     </style>
 </head>
-<body class="bg-gray-200 p-4 sm:p-8 flex justify-center items-start min-h-screen">
 
-    <div class="main-container bg-white rounded-lg overflow-hidden w-full mx-auto">
+<body class="bg-slate-900 p-4 sm:p-8 flex justify-center items-start min-h-screen">
+
+    <div class="main-container bg-slate-800 rounded-lg overflow-hidden w-full mx-auto text-slate-200">
         <!-- Contenedor de Idiomas y Descarga PDF -->
-        <div class="p-4 bg-gray-50 flex justify-end space-x-2 items-center">
+        <div class="p-4 bg-slate-900 flex justify-end space-x-2 items-center border-b border-slate-700">
             <button id="btn-es" class="lang-btn active text-sm font-semibold py-1 px-3 rounded-full">Español</button>
             <button id="btn-en" class="lang-btn text-sm font-semibold py-1 px-3 rounded-full">English</button>
             <!-- Modified PDF download button to be a direct link -->
-            <a id="btn-download-pdf" href="https://mk1871.github.io/angel-cv/pdfs/Curriculum_Angel_Castaneda_ES.pdf" target="_blank" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-semibold py-1 px-3 rounded-full transition-colors duration-300">
+            <a id="btn-download-pdf" href="https://mk1871.github.io/angel-cv/pdfs/Curriculum_Angel_Castaneda_ES.pdf"
+                target="_blank"
+                class="bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold py-1 px-3 rounded-full transition-colors duration-300">
                 <i class="fas fa-file-pdf mr-1"></i> <span id="pdf-button-text">Descargar PDF</span>
             </a>
         </div>
@@ -115,94 +93,137 @@
         <!-- Currículum en Español -->
         <div id="cv-es" class="flex flex-col md:flex-row">
             <!-- Sidebar (Columna Izquierda) -->
-            <aside class="sidebar text-white w-full md:w-1/3 p-6">
+            <aside class="sidebar text-gray-300 w-full md:w-1/3 p-6">
                 <div class="text-center mb-8">
                     <!-- Se elimina la imagen de perfil -->
-                    <h1 class="text-2xl font-bold">ANGEL M. CASTAÑEDA</h1>
-                    <h2 class="text-md font-light text-blue-300">Desarrollador de Software y Especialista en Soluciones al Cliente</h2>
+                    <h1 class="text-2xl font-bold text-white">ANGEL M. CASTAÑEDA URB.</h1>
+                    <h2 class="text-md font-light text-emerald-400 mt-2">Tecnólogo en Desarrollo de Software <br><span
+                            class="text-sm text-gray-400">Backend, Linux & Automatización</span></h2>
                 </div>
 
                 <div class="mb-8">
-                    <h3 class="text-lg font-semibold border-b-2 border-blue-400 pb-2 mb-4">CONTACTO</h3>
+                    <h3 class="text-lg font-semibold border-b-2 border-emerald-500 pb-2 mb-4 text-white">CONTACTO</h3>
                     <ul class="space-y-3 text-sm">
                         <li><i class="fas fa-phone fa-fw mr-3 skill-icon"></i> (+57) 315-604-6142</li>
                         <li><i class="fas fa-envelope fa-fw mr-3 skill-icon"></i> manuelkas2022@gmail.com</li>
-                        <li><i class="fab fa-github fa-fw mr-3 skill-icon"></i> <a href="https://github.com/mk1871" target="_blank" class="hover:text-blue-300">Perfil de GitHub</a></li>
+                        <li><i class="fab fa-github fa-fw mr-3 skill-icon"></i> <a href="https://github.com/mk1871"
+                                target="_blank" class="hover:text-emerald-300 transition-colors">Perfil de GitHub</a>
+                        </li>
                         <li><i class="fas fa-map-marker-alt fa-fw mr-3 skill-icon"></i> Bucaramanga, Colombia</li>
                     </ul>
                 </div>
 
                 <div class="mb-8">
-                    <h3 class="text-lg font-semibold border-b-2 border-blue-400 pb-2 mb-4">HABILIDADES TÉCNICAS</h3>
+                    <h3 class="text-lg font-semibold border-b-2 border-emerald-500 pb-2 mb-4 text-white">HABILIDADES
+                        TÉCNICAS</h3>
                     <ul class="space-y-2 text-sm">
-                        <li><i class="fas fa-code fa-fw mr-2 skill-icon"></i> Lenguajes: JavaScript, Python, PHP, C++, TypeScript, Bash</li>
-                        <li><i class="fas fa-laptop-code fa-fw mr-2 skill-icon"></i> Desarrollo Web: HTML, CSS, Vue.js, Node.js, Tailwind CSS</li>
-                        <li><i class="fas fa-robot fa-fw mr-2 skill-icon"></i> Automatización: Selenium, Playwright, Bots con Python</li>
-                        <li><i class="fas fa-chart-bar fa-fw mr-2 skill-icon"></i> Análisis de Datos: Python (Pandas), Jupyter Notebooks</li>
-                        <li><i class="fas fa-database fa-fw mr-2 skill-icon"></i> Bases de Datos: SQL, NoSQL</li>
-                        <li><i class="fas fa-cloud fa-fw mr-2 skill-icon"></i> APIs: Creación y Consumo de APIs REST</li>
-                        <li><i class="fas fa-terminal fa-fw mr-2 skill-icon"></i> Sistemas: Linux, Git</li>
-                        <li><i class="fas fa-headset fa-fw mr-2 skill-icon"></i> Gestión de CRM y Soporte</li>
-                        <li><i class="fas fa-comments fa-fw mr-2 skill-icon"></i> IA: Implementación de Chatbots</li>
+                        <li><i class="fas fa-terminal fa-fw mr-2 skill-icon"></i> <strong>Sistemas:</strong> Linux
+                            (Rocky, Arch, Kali, Parrot), Bash</li>
+                        <li><i class="fas fa-shield-alt fa-fw mr-2 skill-icon"></i> <strong>Seguridad:</strong> Endian
+                            Firewall, Nmap, Wireshark, Auditoría Wireless (Lab)</li>
+                        <li><i class="fas fa-code fa-fw mr-2 skill-icon"></i> <strong>Lenguajes:</strong> Python, PHP,
+                            JavaScript, SQL</li>
+                        <li><i class="fas fa-server fa-fw mr-2 skill-icon"></i> <strong>Backend:</strong> Laravel,
+                            Node.js, APIs REST</li>
+                        <li><i class="fas fa-database fa-fw mr-2 skill-icon"></i> <strong>Datos:</strong> PostgreSQL,
+                            MySQL, Supabase</li>
+                        <li><i class="fas fa-robot fa-fw mr-2 skill-icon"></i> <strong>Automatización:</strong>
+                            Selenium, Playwright, Python Bots</li>
+                        <li><i class="fas fa-laptop-code fa-fw mr-2 skill-icon"></i> <strong>Full Stack:</strong>
+                            Vue.js, TailwindCSS, Git (Trabajo en Equipo)</li>
+                        <li><i class="fas fa-cloud fa-fw mr-2 skill-icon"></i> <strong>Cloud:</strong> AWS S3
+                            (Integración nivel código)</li>
                     </ul>
                 </div>
-                
+
                 <div>
-                    <h3 class="text-lg font-semibold border-b-2 border-blue-400 pb-2 mb-4">IDIOMAS</h3>
+                    <h3 class="text-lg font-semibold border-b-2 border-emerald-500 pb-2 mb-4 text-white">IDIOMAS</h3>
                     <ul class="space-y-2 text-sm">
                         <li><strong>Español:</strong> Nativo</li>
                         <li><strong>Inglés:</strong> Intermedio (B1)</li>
                     </ul>
                 </div>
+
+                <div class="mt-8">
+                    <h3 class="text-lg font-semibold border-b-2 border-emerald-500 pb-2 mb-4 text-white">EDUCACIÓN</h3>
+                    <ul class="space-y-4 text-sm">
+                        <li>
+                            <strong>Tecnólogo en Análisis y Desarrollo de Software</strong><br>
+                            <span class="text-gray-400">SENA, Centro Tecnológico del Mobiliario – Itagüí (Jul
+                                2025)</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-8">
+                    <h3 class="text-lg font-semibold border-b-2 border-emerald-500 pb-2 mb-4 text-white">CERTIFICACIONES
+                    </h3>
+                    <ul class="space-y-4 text-sm">
+                        <li>
+                            <strong>Google Cybersecurity Certificate</strong><br>
+                            <span class="text-gray-400">En curso (Coursera)</span>
+                        </li>
+                    </ul>
+                </div>
             </aside>
 
             <!-- Contenido Principal (Columna Derecha) -->
-            <main class="content w-full md:w-2/3 p-8">
+            <main class="content w-full md:w-2/3 p-8 bg-slate-800 text-gray-300">
                 <section class="mb-8">
-                    <h2 class="text-2xl font-bold">RESUMEN PROFESIONAL</h2>
-                    <p class="text-sm leading-relaxed text-gray-700">
-                        Desarrollador de software y especialista en soporte con más de 8 años de experiencia conectando la excelencia técnica con la satisfacción del cliente. Experto en el desarrollo de soluciones backend, gestión de bases de datos SQL y análisis de datos con Python (incluyendo Pandas y Jupyter Notebooks) para optimizar procesos. Hábil en la automatización de procesos web con herramientas como Selenium y Playwright. Apasionado por usar la tecnología, incluyendo herramientas de IA, para resolver problemas complejos y mejorar la experiencia del usuario final.
+                    <h2 class="text-2xl font-bold text-white">RESUMEN PROFESIONAL</h2>
+                    <p class="text-sm leading-relaxed text-gray-300">
+                        Tecnólogo en Desarrollo de Software con sólida experiencia en backend, gestión de servidores
+                        Linux (Rocky/Arch) y automatización con Python.
+                        Especializado en la implementación de soluciones seguras y eficientes. He configurado firewalls
+                        perimetrales (Endian) y realizado auditorías de seguridad en entornos controlados (Kali/Parrot).
+                        Busco aplicar mis habilidades técnicas y pasión por la ciberseguridad para proteger y optimizar
+                        infraestructuras críticas.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-bold">EXPERIENCIA PROFESIONAL</h2>
+                    <h2 class="text-2xl font-bold text-white">EXPERIENCIA PROFESIONAL</h2>
                     <div class="space-y-6">
                         <div>
-                            <h3 class="text-lg font-semibold">Aprendiz de Desarrollo y Soporte</h3>
+                            <h3 class="text-lg font-semibold text-white">Desarrollador Backend & Automatización <span
+                                    class="text-sm font-normal text-gray-400">(Contrato de Aprendizaje)</span></h3>
                             <p class="job-title text-md font-medium">SCALA COLOMBIA SAS | Sep 2024 – May 2025</p>
-                            <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
-                                <li>Gestioné tickets de soporte técnico y colaboré con el equipo de desarrollo para la resolución de bugs.</li>
-                                <li>Alcanzó un 95% de calificación de satisfacción del cliente a través de asistencia técnica de primer nivel.</li>
+                            <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
+                                <li>Desarrollo de backend con Laravel para consumo de APIs externas (Twilio, Retell,
+                                    Synthflow).</li>
+                                <li>Implementación de procesos ETL (Extracción, Transformación y Carga) para generar
+                                    reportes diarios de CVs y logs.</li>
+                                <li>Automatización de escritura y almacenamiento seguro de logs y archivos en AWS S3.
+                                </li>
+                                <li>Optimización de bases de datos y colaboración directa con el equipo de análisis de
+                                    datos.</li>
                             </ul>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold">Desarrollador y Consultor TI</h3>
+                            <h3 class="text-lg font-semibold text-white">Desarrollador Full Stack & Consultor TI</h3>
                             <p class="job-title text-md font-medium">Freelance | 2020 – 2024</p>
-                            <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
-                                <li>Desarrollé APIs REST y soluciones backend con Node.js y Python para automatizar procesos de negocio de clientes.</li>
-                                <li>Implementé automatización web con Selenium y Playwright para la recolección de datos y optimización de tareas repetitivas.</li>
-                                <li>Analicé datos de soporte con Python, Pandas y Jupyter Notebooks para identificar tendencias, reduciendo problemas recurrentes en un 30%.</li>
-                                <li>Implementé un chatbot con IA para filtrar consultas, reduciendo el volumen de tickets manuales en un 25%.</li>
-                                <li>Administré y optimicé bases de datos SQL para garantizar la integridad y el rendimiento de los datos.</li>
+                            <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
+                                <li>Desarrollo de aplicaciones web seguras (Full Stack) utilizando Supabase, Vue.js y
+                                    TailwindCSS.</li>
+                                <li>Implementación y configuración de firewalls perimetrales (Endian) y servidores Linux
+                                    (Rocky) para clientes.</li>
+                                <li>Auditoría de seguridad en redes inalámbricas y pruebas de penetración en entornos
+                                    controlados (Lab) usando Nmap/Kali.</li>
+                                <li>Creación de scripts de automatización en Python y Bash para administración de
+                                    sistemas.</li>
+                                <li>Soporte técnico remoto avanzado y mantenimiento de infraestructura con herramientas
+                                    como RustDesk.</li>
                             </ul>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold">Técnico Principal de Soporte y Web</h3>
+                            <h3 class="text-lg font-semibold text-white">Técnico Principal de Soporte y Redes</h3>
                             <p class="job-title text-md font-medium">C & S Computadores | 2016 – 2020</p>
-                            <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
-                                <li>Atendí un alto volumen de solicitudes de clientes (+25/día) relacionadas con diagnóstico y reparación.</li>
-                                <li>Lideré el rediseño del sitio web de la empresa, lo que resultó en un aumento del 30% en las consultas online.</li>
+                            <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
+                                <li>Diagnóstico y resolución de fallos de hardware y software en equipos de cómputo.
+                                </li>
+                                <li>Configuración básica de redes LAN y resolución de problemas de conectividad.</li>
+                                <li>Lideré la actualización tecnológica de la infraestructura interna.</li>
                             </ul>
                         </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold">EDUCACIÓN</h2>
-                    <div>
-                        <h3 class="text-lg font-semibold">Tecnólogo en Análisis y Desarrollo de Software</h3>
-                        <p class="text-md font-medium text-gray-600">SENA, Centro Tecnológico del Mobiliario – Itagüí (2024)</p>
                     </div>
                 </section>
             </main>
@@ -210,95 +231,132 @@
 
         <!-- Currículum en Inglés -->
         <div id="cv-en" class="hidden flex-col md:flex-row">
-             <!-- Sidebar (Left Column) -->
-            <aside class="sidebar text-white w-full md:w-1/3 p-6">
+            <!-- Sidebar (Left Column) -->
+            <aside class="sidebar text-gray-300 w-full md:w-1/3 p-6">
                 <div class="text-center mb-8">
                     <!-- Profile picture removed -->
-                    <h1 class="text-2xl font-bold">ANGEL M. CASTAÑEDA</h1>
-                    <h2 class="text-md font-light text-blue-300">Software Developer & Customer Solutions Specialist</h2>
+                    <h1 class="text-2xl font-bold text-white">ANGEL M. CASTAÑEDA URB.</h1>
+                    <h2 class="text-md font-light text-emerald-400 mt-2">Software Development Technologist <br><span
+                            class="text-sm text-gray-400">Backend, Linux & Automation</span></h2>
                 </div>
 
                 <div class="mb-8">
-                    <h3 class="text-lg font-semibold border-b-2 border-blue-400 pb-2 mb-4">CONTACT</h3>
+                    <h3 class="text-lg font-semibold border-b-2 border-emerald-500 pb-2 mb-4 text-white">CONTACT</h3>
                     <ul class="space-y-3 text-sm">
                         <li><i class="fas fa-phone fa-fw mr-3 skill-icon"></i> (+57) 315-604-6142</li>
                         <li><i class="fas fa-envelope fa-fw mr-3 skill-icon"></i> manuelkas2022@gmail.com</li>
-                        <li><i class="fab fa-github fa-fw mr-3 skill-icon"></i> <a href="https://github.com/mk1871" target="_blank" class="hover:text-blue-300">GitHub Profile</a></li>
+                        <li><i class="fab fa-github fa-fw mr-3 skill-icon"></i> <a href="https://github.com/mk1871"
+                                target="_blank" class="hover:text-emerald-300 transition-colors">GitHub Profile</a></li>
                         <li><i class="fas fa-map-marker-alt fa-fw mr-3 skill-icon"></i> Bucaramanga, Colombia</li>
                     </ul>
                 </div>
 
                 <div class="mb-8">
-                    <h3 class="text-lg font-semibold border-b-2 border-blue-400 pb-2 mb-4">TECHNICAL SKILLS</h3>
+                    <h3 class="text-lg font-semibold border-b-2 border-emerald-500 pb-2 mb-4 text-white">TECHNICAL
+                        SKILLS</h3>
                     <ul class="space-y-2 text-sm">
-                        <li><i class="fas fa-code fa-fw mr-2 skill-icon"></i> Languages: JavaScript, Python, PHP, C++, TypeScript, Bash</li>
-                        <li><i class="fas fa-laptop-code fa-fw mr-2 skill-icon"></i> Web Development: HTML, CSS, Vue.js, Node.js, Tailwind CSS</li>
-                        <li><i class="fas fa-robot fa-fw mr-2 skill-icon"></i> Automation: Selenium, Playwright, Python Bots</li>
-                        <li><i class="fas fa-chart-bar fa-fw mr-2 skill-icon"></i> Data Analysis: Python (Pandas), Jupyter Notebooks</li>
-                        <li><i class="fas fa-database fa-fw mr-2 skill-icon"></i> Database Management: SQL, NoSQL</li>
-                        <li><i class="fas fa-cloud fa-fw mr-2 skill-icon"></i> APIs: REST API Development & Consumption</li>
-                        <li><i class="fas fa-terminal fa-fw mr-2 skill-icon"></i> Systems: Linux, Git</li>
-                        <li><i class="fas fa-headset fa-fw mr-2 skill-icon"></i> CRM & Support Management</li>
-                        <li><i class="fas fa-comments fa-fw mr-2 skill-icon"></i> AI: Chatbot Implementation</li>
+                        <li><i class="fas fa-terminal fa-fw mr-2 skill-icon"></i> <strong>Systems:</strong> Linux
+                            (Rocky, Arch, Kali, Parrot), Bash</li>
+                        <li><i class="fas fa-shield-alt fa-fw mr-2 skill-icon"></i> <strong>Security:</strong> Endian
+                            Firewall, Nmap, Wireshark, Wireless Auditing (Lab)</li>
+                        <li><i class="fas fa-code fa-fw mr-2 skill-icon"></i> <strong>Languages:</strong> Python, PHP,
+                            JavaScript, SQL</li>
+                        <li><i class="fas fa-server fa-fw mr-2 skill-icon"></i> <strong>Backend:</strong> Laravel,
+                            Node.js, REST APIs</li>
+                        <li><i class="fas fa-database fa-fw mr-2 skill-icon"></i> <strong>Data:</strong> PostgreSQL,
+                            MySQL, Supabase</li>
+                        <li><i class="fas fa-robot fa-fw mr-2 skill-icon"></i> <strong>Automation:</strong> Selenium,
+                            Playwright, Python Bots</li>
+                        <li><i class="fas fa-laptop-code fa-fw mr-2 skill-icon"></i> <strong>Full Stack:</strong>
+                            Vue.js, TailwindCSS, Git (Teamwork)</li>
+                        <li><i class="fas fa-cloud fa-fw mr-2 skill-icon"></i> <strong>Cloud:</strong> AWS S3
+                            (Code-level integration)</li>
                     </ul>
                 </div>
-                
+
                 <div>
-                    <h3 class="text-lg font-semibold border-b-2 border-blue-400 pb-2 mb-4">LANGUAGES</h3>
+                    <h3 class="text-lg font-semibold border-b-2 border-emerald-500 pb-2 mb-4 text-white">LANGUAGES</h3>
                     <ul class="space-y-2 text-sm">
                         <li><strong>Spanish:</strong> Native</li>
                         <li><strong>English:</strong> Intermediate (B1)</li>
                     </ul>
                 </div>
+                <div class="mt-8">
+                    <h3 class="text-lg font-semibold border-b-2 border-emerald-500 pb-2 mb-4 text-white">EDUCATION</h3>
+                    <ul class="space-y-4 text-sm">
+                        <li>
+                            <strong>Technologist in Software Analysis and Development</strong><br>
+                            <span class="text-gray-400">SENA, Centro Tecnológico del Mobiliario – Itagüí (Jul
+                                2025)</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-8">
+                    <h3 class="text-lg font-semibold border-b-2 border-emerald-500 pb-2 mb-4 text-white">CERTIFICATIONS
+                    </h3>
+                    <ul class="space-y-4 text-sm">
+                        <li>
+                            <strong>Google Cybersecurity Certificate</strong><br>
+                            <span class="text-gray-400">In Progress (Coursera)</span>
+                        </li>
+                    </ul>
+                </div>
             </aside>
 
             <!-- Main Content (Right Column) -->
-            <main class="content w-full md:w-2/3 p-8">
+            <main class="content w-full md:w-2/3 p-8 bg-slate-800 text-gray-300">
                 <section class="mb-8">
-                    <h2 class="text-2xl font-bold">PROFESSIONAL SUMMARY</h2>
-                    <p class="text-sm leading-relaxed text-gray-700">
-                        Software developer and support specialist with over 8 years of experience connecting technical excellence with customer satisfaction. Expert in backend solutions development, SQL database management, and data analysis with Python (including Pandas and Jupyter Notebooks) to optimize processes. Proficient in web automation with tools like Selenium and Playwright. Passionate about using technology, including AI tools, to solve complex problems and enhance the end-user experience.
+                    <h2 class="text-2xl font-bold text-white">PROFESSIONAL SUMMARY</h2>
+                    <p class="text-sm leading-relaxed text-gray-300">
+                        Software Development Technologist with solid experience in backend, Linux server management
+                        (Rocky/Arch), and Python automation.
+                        Specialized in implementing secure and efficient solutions. I have configured perimeter
+                        firewalls (Endian) and performed security audits in controlled environments (Kali/Parrot).
+                        I seek to apply my technical skills and passion for cybersecurity to protect and optimize
+                        critical infrastructures.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-bold">PROFESSIONAL EXPERIENCE</h2>
+                    <h2 class="text-2xl font-bold text-white">PROFESSIONAL EXPERIENCE</h2>
                     <div class="space-y-6">
                         <div>
-                            <h3 class="text-lg font-semibold">Development & Support Apprentice</h3>
+                            <h3 class="text-lg font-semibold text-white">Backend Developer & Automation Specialist <span
+                                    class="text-sm font-normal text-gray-400">(Apprentice Contract)</span></h3>
                             <p class="job-title text-md font-medium">SCALA COLOMBIA SAS | Sep 2024 – May 2025</p>
-                            <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
-                                <li>Managed technical support tickets and collaborated with the development team on bug resolution.</li>
-                                <li>Achieved a 95% customer satisfaction rating through top-tier technical assistance.</li>
+                            <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
+                                <li>Developed backend solutions with Laravel to consume and process data from external
+                                    APIs (Twilio, Retell, Synthflow).</li>
+                                <li>Implemented ETL (Extract, Transform, Load) processes to generate daily reports and
+                                    logs.</li>
+                                <li>Automated secure logging and file storage operations in AWS S3.</li>
+                                <li>Optimized database interactions and collaborated with the data analysis team.</li>
                             </ul>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold">Developer & IT Consultant</h3>
+                            <h3 class="text-lg font-semibold text-white">Full Stack Developer & IT Consultant</h3>
                             <p class="job-title text-md font-medium">Freelance | 2020 – 2024</p>
-                            <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
-                                <li>Developed REST APIs and backend solutions with Node.js and Python to automate client business processes.</li>
-                                <li>Implemented web automation with Selenium and Playwright for data collection and optimization of repetitive tasks.</li>
-                                <li>Analyzed support data using Python, Pandas, and Jupyter Notebooks to identify trends, reducing recurring issues by 30%.</li>
-                                <li>Implemented an AI chatbot to filter inquiries, reducing manual ticket volume by 25%.</li>
-                                <li>Managed and optimized SQL databases to ensure data integrity and performance.</li>
+                            <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
+                                <li>Development of secure web applications (Full Stack) using Supabase, Vue.js, and
+                                    TailwindCSS.</li>
+                                <li>Implementation and configuration of perimeter firewalls (Endian) and Linux servers
+                                    (Rocky) for clients.</li>
+                                <li>Security auditing of wireless networks and penetration testing in controlled
+                                    environments (Lab) using Nmap/Kali.</li>
+                                <li>Creation of automation scripts in Python and Bash for system administration.</li>
+                                <li>Advanced remote technical support and infrastructure maintenance using tools like
+                                    RustDesk.</li>
                             </ul>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold">Lead Support & Web Technician</h3>
+                            <h3 class="text-lg font-semibold text-white">Lead Support & Network Technician</h3>
                             <p class="job-title text-md font-medium">C & S Computadores | 2016 – 2020</p>
-                            <ul class="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1">
-                                <li>Handled a high volume of customer requests (+25/day) for diagnostics and repairs.</li>
-                                <li>Led the redesign of the company website, resulting in a 30% increase in online inquiries.</li>
+                            <ul class="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
+                                <li>Diagnosed and resolved hardware/software issues in computing equipment.</li>
+                                <li>configured basic LAN networks and troubleshoot connectivity issues.</li>
+                                <li>Led the technological update of internal infrastructure.</li>
                             </ul>
                         </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold">EDUCATION</h2>
-                    <div>
-                        <h3 class="text-lg font-semibold">Technologist in Software Analysis and Development</h3>
-                        <p class="text-md font-medium text-gray-600">SENA, Centro Tecnológico del Mobiliario – Itagüí (2024)</p>
                     </div>
                 </section>
             </main>
@@ -306,67 +364,87 @@
 
         <!-- Hidden content for PDF generation -->
         <div id="cv-pdf-content" class="p-8">
-            <h1>ANGEL MANUEL CASTAÑEDA URIBE</h1>
-            <p style="text-align: center; font-size: 11pt; margin-bottom: 15pt;">Desarrollador de Software y Especialista en Soluciones al Cliente</p>
+            <h1>ANGEL M. CASTAÑEDA URB.</h1>
+            <p style="text-align: center; font-size: 11pt; margin-bottom: 15pt;">Tecnólogo en Desarrollo de Software |
+                Backend, Linux & Automatización</p>
 
             <div class="contact-info">
-                <span>(+57) 315-604-6142</span> | 
-                <span>manuelkas2022@gmail.com</span> | 
-                <span>Perfil de GitHub: https://github.com/mk1871</span> | 
+                <span>(+57) 315-604-6142</span> |
+                <span>manuelkas2022@gmail.com</span> |
+                <span>Perfil de GitHub: https://github.com/mk1871</span> |
                 <span>Bucaramanga, Colombia</span>
             </div>
 
             <h2>RESUMEN PROFESIONAL</h2>
             <p>
-                Desarrollador de software y especialista en soporte con más de 8 años de experiencia conectando la excelencia técnica con la satisfacción del cliente. Experto en el desarrollo de soluciones backend, gestión de bases de datos SQL y análisis de datos con Python (incluyendo Pandas y Jupyter Notebooks) para optimizar procesos. Hábil en la automatización de procesos web con herramientas como Selenium y Playwright. Apasionado por usar la tecnología, incluyendo herramientas de IA, para resolver problemas complejos y mejorar la experiencia del usuario final.
+                Tecnólogo en Desarrollo de Software con sólida experiencia en backend, gestión de servidores Linux
+                (Rocky/Arch) y automatización con Python.
+                Especializado en la implementación de soluciones seguras y eficientes. He configurado firewalls
+                perimetrales (Endian) y realizado auditorías de seguridad en entornos controlados (Kali/Parrot).
+                Busco aplicar mis habilidades técnicas y pasión por la ciberseguridad para proteger y optimizar
+                infraestructuras críticas.
             </p>
 
             <h2>HABILIDADES TÉCNICAS</h2>
             <ul>
-                <li>Lenguajes: JavaScript, Python, PHP, C++, TypeScript, Bash</li>
-                <li>Desarrollo Web: HTML, CSS, Vue.js, Node.js, Tailwind CSS</li>
-                <li>Automatización: Selenium, Playwright, Bots con Python</li>
-                <li>Análisis de Datos: Python (Pandas), Jupyter Notebooks</li>
-                <li>Bases de Datos: SQL, NoSQL</li>
-                <li>APIs: Creación y Consumo de APIs REST</li>
-                <li>Sistemas: Linux, Git</li>
-                <li>Gestión de CRM y Soporte</li>
-                <li>IA: Implementación de Chatbots</li>
+                <li>Sistemas: Linux (Rocky, Arch, Kali, Parrot), Bash Scripting</li>
+                <li>Seguridad: Endian Firewall, Nmap, Wireshark, Auditoría Wireless (Lab)</li>
+                <li>Lenguajes: Python, PHP, JavaScript, SQL</li>
+                <li>Backend: Laravel, Node.js, APIs REST</li>
+                <li>Datos: PostgreSQL, MySQL, Supabase</li>
+                <li>Automatización: Selenium, Playwright, Python Bots</li>
+                <li>Full Stack: Vue.js, TailwindCSS, Git (Trabajo en Equipo)</li>
+                <li>Cloud: AWS S3 (Integración nivel código)</li>
             </ul>
 
             <h2>EXPERIENCIA PROFESIONAL</h2>
             <div class="job-details">
-                <h3>Aprendiz de Desarrollo y Soporte</h3>
+                <h3>Desarrollador Backend & Automatización (Contrato de Aprendizaje)</h3>
                 <p class="job-period">SCALA COLOMBIA SAS | Sep 2024 – May 2025</p>
                 <ul>
-                    <li>Gestioné tickets de soporte técnico y colaboré con el equipo de desarrollo para la resolución de bugs.</li>
-                    <li>Alcancé un 95% de calificación de satisfacción del cliente a través de asistencia técnica de primer nivel.</li>
+                    <li>Desarrollo de backend con Laravel para consumo de APIs externas (Twilio, Retell, Synthflow).
+                    </li>
+                    <li>Implementación de procesos ETL (Extracción, Transformación y Carga) para generar reportes
+                        diarios de CVs y logs.</li>
+                    <li>Automatización de escritura y almacenamiento seguro de logs y archivos en AWS S3.</li>
+                    <li>Optimización de bases de datos y colaboración directa con el equipo de análisis de datos.</li>
                 </ul>
             </div>
             <div class="job-details">
-                <h3>Desarrollador y Consultor TI</h3>
+                <h3>Desarrollador Full Stack & Consultor TI</h3>
                 <p class="job-period">Freelance | 2020 – 2024</p>
                 <ul>
-                    <li>Desarrollé APIs REST y soluciones backend con Node.js y Python para automatizar procesos de negocio de clientes.</li>
-                    <li>Implementé automatización web con Selenium y Playwright para la recolección de datos y optimización de tareas repetitivas.</li>
-                    <li>Analicé datos de soporte con Python, Pandas y Jupyter Notebooks para identificar tendencias, reduciendo problemas recurrentes en un 30%.</li>
-                    <li>Implementé un chatbot con IA para filtrar consultas, reduciendo el volumen de tickets manuales en un 25%.</li>
-                    <li>Administré y optimicé bases de datos SQL para garantizar la integridad y el rendimiento de los datos.</li>
+                    <li>Desarrollo de aplicaciones web seguras (Full Stack) utilizando Supabase, Vue.js y TailwindCSS.
+                    </li>
+                    <li>Implementación y configuración de firewalls perimetrales (Endian) y servidores Linux (Rocky)
+                        para clientes.</li>
+                    <li>Auditoría de seguridad en redes inalámbricas y pruebas de penetración en entornos controlados
+                        (Lab) usando Nmap/Kali.</li>
+                    <li>Creación de scripts de automatización en Python y Bash para administración de sistemas.</li>
+                    <li>Soporte técnico remoto avanzado y mantenimiento de infraestructura con herramientas como
+                        RustDesk.</li>
                 </ul>
             </div>
             <div class="job-details">
-                <h3>Técnico Principal de Soporte y Web</h3>
+                <h3>Técnico Principal de Soporte y Redes</h3>
                 <p class="job-period">C & S Computadores | 2016 – 2020</p>
                 <ul>
-                    <li>Atendí un alto volumen de solicitudes de clientes (+25/día) relacionadas con diagnóstico y reparación.</li>
-                    <li>Lideré el rediseño del sitio web de la empresa, lo que resultó en un aumento del 30% en las consultas online.</li>
+                    <li>Diagnóstico y resolución de fallos de hardware y software en equipos de cómputo.</li>
+                    <li>Configuración básica de redes LAN y resolución de problemas de conectividad.</li>
+                    <li>Lideré la actualización tecnológica de la infraestructura interna.</li>
                 </ul>
             </div>
 
             <h2>EDUCACIÓN</h2>
             <div>
                 <h3>Tecnólogo en Análisis y Desarrollo de Software</h3>
-                <p>SENA, Centro Tecnológico del Mobiliario – Itagüí (2024)</p>
+                <p>SENA, Centro Tecnológico del Mobiliario – Itagüí (Jul 2025)</p>
+            </div>
+
+            <h2>CERTIFICACIONES</h2>
+            <div>
+                <h3>Google Cybersecurity Certificate</h3>
+                <p>En curso (Coursera)</p>
             </div>
 
             <h2>IDIOMAS</h2>
@@ -415,4 +493,5 @@
     </script>
 
 </body>
+
 </html>
