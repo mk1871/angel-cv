@@ -182,9 +182,9 @@ design:
 locale:
   language: es
   phone_number_format: national
-  page_numbering_template: NOMBRE - Página NÚMERO_DE_PÁGINA de TOTAL_DE_PÁGINAS
-  last_updated_date_template: Última actualización HOY
-  date_template: MES_ABREVIADO AÑO
+  page_numbering_template: ANGEL MANUEL CASTAÑEDA URIBE - Página PAGE_NUMBER de TOTAL_PAGES
+  last_updated_date_template: Última actualización TODAY
+  date_template: MONTH_ABBREVIATION YEAR
   month: mes
   months: meses
   year: año
